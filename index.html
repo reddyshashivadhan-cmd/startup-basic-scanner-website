@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Crocodile AI - Startup Basic Scanner | ₹1,999/month</title>
+    <meta name="description" content="Automated daily security scanning for Indian startups at ₹1,999/month. OWASP Top 10 coverage, Telegram reports, zero setup.">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="White Crocodile AI - Startup Basic Scanner | ₹1,999/month">
+    <meta property="og:description" content="Automated daily security scanning for Indian startups. OWASP Top 10 coverage, Telegram reports.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reddyshashivadhan-cmd.github.io/startup-basic-scanner-website">
+    
+    <style>
+        /* Professional Startup Website */
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #059669;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+        
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+        }
+        
+        /* CEO Badge in Header */
+        .ceo-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f0f9ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: var(--primary);
+        }
+        
+        .ceo-initials {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.05"><path d="M0,0 L100,100 M100,0 L0,100"/></svg>');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Founder Badge in Hero */
+        .founder-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 30px;
+        }
+        
+        .founder-initials {
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .founder-info h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .founder-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 2px 0 0 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .price-highlight {
+            background: white;
+            color: var(--primary);
+            padding: 20px 40px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .price-highlight span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: normal;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .button {
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .button.primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 60px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
+        }
+        
+        .pricing-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+        
+        .price span {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 40px 0;
+        }
+        
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .cta-box {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-method {
+            padding: 30px;
+            background: var(--light);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-method .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-method h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .founder-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .founder-profile-initials {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .founder-details h4 {
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .hero-buttons { flex-direction: column; }
+            .price-highlight { font-size: 2rem; padding: 15px 30px; }
+            .pricing-card { padding: 40px 20px; }
+            .contact-methods { grid-template-columns: 1fr; }
+            .founder-badge { flex-direction: column; text-align: center; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero { padding: 140px 0 80px; }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .price { font-size: 3rem; }
+        }
+        
+        /* Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🐊</span>
+                    <span>White Crocodile AI</span>
+                </a>
+                
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div class="ceo-badge">
+                        <div class="ceo-initials">SVR</div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">Shashi Vadhan Reddy</div>
+                    </div>
+                    
+                    <div class="nav-links">
+                        <a href="#how">How It Works</a>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    
+                    <a href="#pricing" class="cta-button">Start Free Trial</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 Exclusive Startup Offer</div>
+                
+                <!-- Founder Badge -->
+                <div class="founder-badge">
+                    <div class="founder-initials">SVR</div>
+                    <div class="founder-info">
+                        <h3>Shashi Vadhan Reddy</h3>
+                        <p>Founder & CEO • 14-year-old Innovator</p>
+                    </div>
+                </div>
+                
+                <h1>Daily Security Scanning for ₹1,999/month</h1>
+                <p class="hero-subtitle">Automated OWASP Top 10 vulnerability detection. Telegram reports every morning. Zero setup required.</p>
+                
+                <div class="price-highlight floating">
+                    ₹1,999 <span>/month per repository</span>
+                </div>
+                
+                <p style="opacity: 0.9; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    <strong>95% cheaper</strong> than security consultants. Used by Indian startups across SaaS, FinTech, and E-commerce.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#pricing" class="button primary">
+                        <i class="fas fa-rocket"></i> Start 14-Day Free Trial
+                    </a>
+                    <a href="#how" class="button secondary">
+                        <i class="fas fa-play-circle"></i> See How It Works
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Setup in 10 Minutes, Protection Forever</h2>
+            
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Connect Repository</h3>
+                    <p>Provide GitHub/GitLab URL and Telegram ID. We handle everything else.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Automated Daily Scans</h3>
+                    <p>Our AI scans your code every morning at 9:30 AM IST. No manual intervention needed.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Telegram Reports</h3>
+                    <p>Receive detailed vulnerability reports directly on Telegram with fix suggestions.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Fix & Secure</h3>
+                    <p>Implement fixes from our prioritized list. See security score improve daily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need in Startup Basic</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Detection</h3>
+                    <p>Machine learning algorithms find vulnerabilities traditional scanners miss. Continuously improving.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Fully Automated</h3>
+                    <p>Set once, protect forever. Daily scans run automatically. Telegram reports delivered without fail.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>OWASP Top 10 Coverage</h3>
+                    <p>Comprehensive coverage of SQL injection, XSS, CSRF, security misconfigurations, and more.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Security Dashboard</h3>
+                    <p>Track vulnerabilities, security score, and improvement trends over time. Simple, actionable insights.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🇮🇳</div>
+                    <h3>Made for India</h3>
+                    <p>UPI payments accepted. Servers in India. Compliant with RBI and MeitY guidelines for Indian startups.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast Setup</h3>
+                    <p>Get your first scan results within 30 minutes of signing up. No complex configuration needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-card">
+                <h2>Startup Basic Plan</h2>
+                <p style="opacity: 0.9; font-size: 1.2rem;">Perfect for early-stage startups and solo founders</p>
+                
+                <div class="price">₹1,999<span>/month</span></div>
+                <p style="opacity: 0.9; margin-bottom: 20px;">Billed monthly. Cancel anytime.</p>
+                
+                <ul class="pricing-features">
+                    <li>10 websites/repositories monitoring</li>
+                    <li>Daily automated security scans (9:30 AM IST)</li>
+                    <li>OWASP Top 10 vulnerability detection</li>
+                    <li>Telegram + Email reports</li>
+                    <li>Basic security dashboard</li>
+                    <li>24-hour support response</li>
+                    <li>Public & private repositories</li>
+                    <li>UPI/NetBanking payments accepted</li>
+                    <li>14-day free trial (no credit card required)</li>
+                </ul>
+                
+                <a href="https://t.me/WhiteCrocodileAISecurity_Bot" target="_blank" class="cta-button" style="font-size: 1.2rem; padding: 18px 50px; display: inline-block;">
+                    <i class="fab fa-telegram"></i> Start Free Trial via Telegram
+                </a>
+                
+                <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">
+                    Need more? Check out our <a href="#" style="color: white; text-decoration: underline;">Startup Pro Plan</a> at ₹4,999/month
+                </p>
+            </div>
+            
+            <!-- ROI Comparison -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="color: var(--dark); margin-bottom: 30px;">💰 ROI Calculator</h3>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #dc2626;">Traditional</div>
+                        <div style="font-size: 2.5rem; font-weight: bold;">₹50,000</div>
+                        <div>Security Consultant/Month</div>
+                    </div>
+                    <div style="align-self: center; font-size: 2rem;">→</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--accent);">Our Solution</div>
+                        <div style="font-size: 2.5rem; font-weight: bold;">₹1,999</div>
+                        <div>White Crocodile AI/Month</div>
+                    </div>
+                    <div style="align-self: center; font-size: 2rem;">=</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #059669;">Your Savings</div>
+                        <div style="font-size: 2.5rem; font-weight: bold;">₹48,001</div>
+                        <div>Per Month (96% saving)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Secure Your Startup?</h2>
+                <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto 40px;">
+                    Join Indian startups who trust White Crocodile AI for daily security scanning. Start with a 14-day free trial.
+                </p>
+                
+                <a href="https://t.me/WhiteCrocodileAISecurity_Bot" target="_blank" class="cta-button" style="font-size: 1.3rem; padding: 20px 60px; display: inline-block;">
+                    <i class="fab fa-telegram"></i> Message Bot to Start Trial
+                </a>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="icon">👨‍💻</div>
+                        <h4>Founder & CEO</h4>
+                        <p><strong>Shashi Vadhan Reddy</strong></p>
+                        <p>14-year-old Student Innovator</p>
+                        <p><small>Available after 8:00 PM IST</small></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="icon">📧</div>
+                        <h4>Email</h4>
+                        <p>reddyshashivadhan@gmail.com</p>
+                        <p><small>For business inquiries</small></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="icon">🤖</div>
+                        <h4>Telegram Bot</h4>
+                        <p>@WhiteCrocodileAISecurity_Bot</p>
+                        <p><small>Instant setup & demo</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <span class="logo-icon">🐊</span>
+                        <span>White Crocodile AI</span>
+                    </div>
+                    <p>Founded by <strong>Shashi Vadhan Reddy</strong>, a 14-year-old student innovator from Telangana. Making enterprise security accessible to Indian startups.</p>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 20px; color: white;">Founder & CEO</h4>
+                    <div class="founder-profile">
+                        <div class="founder-profile-initials">SVR</div>
+                        <div class="founder-details">
+                            <h4>Shashi Vadhan Reddy</h4>
+                            <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 5px;">Founder & CEO</p>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">reddyshashivadhan@gmail.com</p>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        Available for calls: 8:00 PM - 10:00 PM IST<br>
+                        School hours: 8:00 AM - 7:00 PM
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 20px; color: white;">Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/reddyshashivadhan-cmd" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://t.me/WhiteCrocodileAISecurity_Bot" target="_blank" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="mailto:reddyshashivadhan@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 15px;">
+                        Telegram: @WhiteCrocodileAISecurity_Bot<br>
+                        Email: reddyshashivadhan@gmail.com
+                    </p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© <span id="current-year">2026</span> White Crocodile AI Security Solutions. Founded by <strong>Shashi Vadhan Reddy</strong>.</p>
+                <p>Made with ❤️ in India 🇮🇳 | A Student Innovation Project</p>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Startup Basic Scanner - ₹1,999/month - Automated Daily Security</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const displayYear = currentYear < 2026 ? 2026 : currentYear;
+            document.getElementById('current-year').textContent = displayYear;
+            
+            // Update all copyright years
+            document.querySelectorAll('.copyright p').forEach(p => {
+                if (p.textContent.includes('2026')) {
+                    p.innerHTML = p.innerHTML.replace('2026', displayYear);
+                }
+            });
+        });
+        
+        // Telegram bot integration with tracking
+        function startTrial(source) {
+            const telegramUrl = 'https://t.me/WhiteCrocodileAISecurity_Bot';
+            window.open(telegramUrl, '_blank');
+            
+            // Track conversion (you can add Google Analytics here later)
+            console.log('Trial started via:', source || 'website', new Date().toISOString());
+            
+            return false;
+        }
+        
+        // Make CTA buttons track clicks
+        document.querySelectorAll('.cta-button, .button.primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                startTrial(buttonText);
+            });
+        });
+        
+        // Mobile menu toggle (optional enhancement)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            }
+        }
+    </script>
+</body>
+</html>
